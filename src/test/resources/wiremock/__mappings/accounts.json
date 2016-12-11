@@ -1,0 +1,41 @@
+[
+  {
+    "request": {
+      "method": "GET",
+      "urlPattern": "/accounts.*"
+    },
+    "response": {
+      "status": 200,
+      "body": "[]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "urlPattern": "/accounts.*"
+    },
+    "response": {
+      "status": 200,
+      "body": "[]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "PATCH",
+      "urlPattern": "/accounts.*"
+    },
+    "response": {
+      "status": 200,
+      "body": "[]",
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
+]

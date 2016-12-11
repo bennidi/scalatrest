@@ -1,0 +1,20 @@
+{
+  "seed": [
+    {"_id": "UUID1", "name": "user1", "code": 100},
+    {"_id": "UUID2", "name": "user2", "code": 100},
+    {"_id": "UUID3", "name": "user3", "code": 100},
+    {"_id": "UUID4", "name": "user4", "code": 100}
+  ],
+  "patches": [
+    { "orig": {"_id": "UUID321", "name": "Healthy", "code": 100},
+      "patch": {"code": 432},
+      "result": {"_id": "UUID321", "name": "Healthy", "code": 432}
+    },
+    { "orig": {"_id": "UUID321e", "name": "Healthy", "code": 100},
+      "patch": {"code": 332, "name": "patched"},
+      "result": {"_id": "UUID321e", "name": "patched", "code": 332}
+    }
+  ],
+  "full": {"_id": "UUID5363289", "name": "Healthy", "code": 100},
+  "random": {"_id": "%random.uuid%", "name": "Healthy", "code": 100}
+}
