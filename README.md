@@ -1,14 +1,16 @@
 # Scalatra Rest Template #
 
 This template represents a blueprint for an integrated stack of technologies that can be used to build RESTful APIs
-with as little boilderplate code as possible.
-Like with Spring-Boot, (integration-)tested and documented REST resources can be built with low effort and few lines of code.
-The template is optimized for a workflow starting with a domain model for which CRUD-like REST service.
-The service can then be further customized and extended with more endpoints and the like.
+with as little boilerplate code as possible.
+  
+Like with Spring-Boot, **(integration-)tested** and documented REST resources can be built with low effort and few lines of code.
+The stack is optimized for quick prototyping of REST resources around a domain model. Domain models are built as case classes. JSON/BSON transformations, CRUD respositories, CRUD integration tests are added as simple one liners or by extending predefined traits.
+
+**Validation** of incoming JSON **with json schema** and endpoint access restriction with JSON Web-Tokens.
 
 ##Technologies
 
-These are the technological choices made by the template
+These are the core technologies used
 
   * [Scalatra](http://scalatra.org/) as the (servlet 3.0 based) core environment for running the application and defining rest resources
   * [Reactivemongo driver](https://github.com/ReactiveMongo/ReactiveMongo) and 
