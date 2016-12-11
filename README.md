@@ -42,9 +42,60 @@ These are the technological choices made by the template
    
 # Development
 
-## Setup
+## SBT
 
-  Read [SETUP GUIDE](./SETUP.README.md) carefully for instructions of how to setup the template
+sbt can be started with a parameter to tell the application which config file to use. Without this parameter the default is application.conf (as described in [[Typesafe Config Guide]](https://github.com/typesafehub/config#standard-behavior)
+
+For testing environment this is
+
+    $ sbt -Dconfig.resource=application.testing.conf
+
+## Test your setup ##
+
+To compile the project and run the included test suite. This will download embeddedmongo and run unit as well as integration tests
+
+    $ ;clean;test
+
+To launch the app in a jetty container do
+
+    $ container:start
+    
+Open [http://localhost:8080/api-docs](http://localhost:8080/api-docs) in a browser to verify that the container is up and running. 
+
+> You need a mongodb running on the port as specified in `application.conf` or the config file you are using. Recommendation: Use `docker pull tutum/mongodb`
+
+## Development ##
+
+Activate automatic recompile and update of server:
+
+    $ ~ ;copy-resources;aux-compile
+
+Run all tests
+
+    $ test 
+
+Run unit tests only
+
+    $ test-only com.github.bennidi.scalatrest.unit.* 
+   
+Run integration tests only
+
+    $ test-only com.github.bennidi.scalatrest.integration.*    
+
+Run tests with coverage instrumentation. Reports are found in `/target/scala-xxx/coverage-reports` folder
+
+    $ ;coverage;test;coverageReport 
+    
+Generate documentation (ScalaDoc). Generated site will be located in `/target/scala-xxx/[api|test-api]` folder
+    
+    $ doc
+    $ test:doc
+
+OPTIONAL: The stack uses Swagger 1.0 for documentation of APIs. To make use of the Swagger features, you can use Swagger UI. Either you use it online or you maintain a local copy (recommended). Clone Swagger-UI into a directory different from your repository.
+
+    $ git clone https://github.com/swagger-api/swagger-ui.git
+    
+You can then open `swagger-ui/dist/index.html` in your preferred browser.    
    
    
 ## Handling CSV based imports
